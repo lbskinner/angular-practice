@@ -23,4 +23,6 @@
   <!-- bind the click event to share() method (in product-list.component.ts)
   event binding uses a set of parentheses, ( ), around the event -->
   <button (click)="share()">Share</button>
+  <!-- pass the current product as input to the component using property binding -->
+  <app-product-alerts [product]="product"> </app-product-alerts>
 </div>
