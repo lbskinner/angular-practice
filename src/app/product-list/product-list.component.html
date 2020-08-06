@@ -24,5 +24,8 @@
   event binding uses a set of parentheses, ( ), around the event -->
   <button (click)="share()">Share</button>
   <!-- pass the current product as input to the component using property binding -->
-  <app-product-alerts [product]="product"> </app-product-alerts>
+  <!-- bind the app-product-alerts component (which is what displays the "Notify Me"
+  button) to the onNotify() method of the product-list component -->
+  <app-product-alerts [product]="product" (notify)="onNotify()">
+  </app-product-alerts>
 </div>
