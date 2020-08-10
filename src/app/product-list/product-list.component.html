@@ -6,13 +6,18 @@
   Directives with an asterisk, *, are structural directives. -->
 
 <!-- With *ngFor, the <div> repeats for each product in the list. -->
-<div *ngFor="let product of products">
+<!-- assign each index in the products array to the productId variable when iterating over the list -->
+<div *ngFor="let product of products; index as productId">
   <!-- display the names of the products using interpolation syntax {{ }}
   Interpolation renders a property's value as text -->
   <h3>
     <!-- set title to be the product's name using property binding [ ] syntax
     property binding [ ] lets you use the property value in a template expression -->
-    <a [title]="product.name + ' details'">
+    <!-- the URL contains one fixed segment, /products, the final segment is a variable, productId -->
+    <a
+      [title]="product.name + ' details'"
+      [routerLink]="['/products', productId]"
+    >
       {{ product.name }}
     </a>
   </h3>
